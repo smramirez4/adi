@@ -1,0 +1,222 @@
+body {
+    margin: 0;
+    font-family: 'Georgia', serif;
+    background: url('imahe/red.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #4b2e2e;
+    overflow: hidden;
+  }
+  
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.301); /* White overlay */
+    z-index: -1;
+  }
+  
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    text-align: justify;
+  }
+  
+  .cover-screen {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(200, 100, 100, 0.2);
+    animation: fadeIn 2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
+  .letter {
+    background-color: #fffaf0;
+    padding: 40px;
+    padding-right: 30px;
+    border-radius: 20px;
+    max-height: 80vh;
+    width: 90%;
+    max-width: 700px;
+    overflow-y: auto;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    animation: slideIn 2s ease forwards;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: #cc0000 #ffe6e6;
+    position: relative;
+  }
+
+
+  .letter::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .letter::-webkit-scrollbar-track {
+    background: #ffe6e6;
+    border-radius: 10px;
+  }
+  
+  .letter::-webkit-scrollbar-thumb {
+    background-color: #cc0000;
+    border-radius: 10px;
+  }
+  
+  
+  h1, h2, h4 {
+    color: #990000; /* dark red */
+}
+  
+p {
+    font-size: 1.6em;     /* Increased font size */
+    line-height: 2em;     /* Better readability */
+    margin: 20px 0;
+    text-align: justify;
+  }
+  
+  
+  button {
+    padding: 12px 25px;
+    font-size: 1em;
+    background-color: #e60000; /* bright red */
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #cc0000; /* darker red on hover */
+}
+  
+  .hidden {
+    display: none;
+  }
+  
+  .closing {
+    text-align: right;
+    margin-top: 50px;
+    font-style: italic;
+  }
+
+  /* Style for Volume Button */
+#volume-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(250, 47, 47, 0.6);
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#volume-btn img {
+    width: 30px;
+    height: 30px;
+}
+
+/* Hover Effect */
+#volume-btn:hover {
+    background: rgb(168, 90, 90);
+}
+  
+
+/* Style for Heart Floating */
+.heart-container {
+  position: fixed;
+  bottom: 0;
+  left: 0%;
+  width: 0;
+  height: 0;
+  z-index: 999;
+  pointer-events: none;
+}
+
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: red;
+  transform: rotate(45deg);
+  animation: floatUp ease-in-out infinite;
+}
+
+.heart::before,
+.heart::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: red;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -10px;
+  left: 0;
+}
+
+.heart::after {
+  left: -10px;
+  top: 0;
+}
+
+
+
+
+
+
+
+
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-200vh) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+
+
+
+
+
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
